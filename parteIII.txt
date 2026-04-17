@@ -1,0 +1,27 @@
+Para implementar las funcionalidades de gestión de productos y pedidos en una base de datos relacional, necesitaríamos las siguientes tablas y relaciones:
+
+1. Tabla USUARIO
+- id_usuario (Primary Key)
+- nombre
+- (Otros datos del usuario...)
+
+2. Tabla PRODUCTO
+- id_producto (Primary Key)
+- nombre
+- precio
+- numero_ventas
+
+3. Tabla PEDIDO
+- id_pedido (Primary Key)
+- id_usuario (Foreign Key -> apunta a USUARIO)
+- fecha
+
+4. Tabla LINEAS_PEDIDO (Relación Muchos a Muchos entre Pedido y Producto)
+- id_pedido (Foreign Key -> apunta a PEDIDO)
+- id_producto (Foreign Key -> apunta a PRODUCTO)
+- cantidad
+
+*RELACIONES:
+- Un Usuario puede tener muchos Pedidos (1 a N).
+- Un Pedido pertenece a un solo Usuario (1 a 1).
+- Un Pedido puede tener muchos Productos y un Producto puede estar en muchos Pedidos. Por eso creamos la tabla intermedia "LINEAS_PEDIDO" (Relación N a N).

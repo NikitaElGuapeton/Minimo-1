@@ -1,26 +1,21 @@
 package edu.upc.dsa.models;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class Pedido {
     private String idUsuario;
-    // Un diccionario para guardar el Producto y qué Cantidad quiere
-    private HashMap<Producto, Integer> listaProductos;
+    private List<Producto> listaProductos;
 
     public Pedido() {}
 
-    public Pedido(String idUsuario) {
+    public Pedido(String idUsuario, List<Producto> listaProductos) {
         this.idUsuario = idUsuario;
-        this.listaProductos = new HashMap<>();
-    }
-
-    // Métod. para añadir productos al pedido
-    public void añadirProducto(Producto p, int cantidad) {
-        this.listaProductos.put(p, cantidad);
+        this.listaProductos = listaProductos;
     }
 
     public String getIdUsuario() { return idUsuario; }
     public void setIdUsuario(String idUsuario) { this.idUsuario = idUsuario; }
-    public HashMap<Producto, Integer> getListaProductos() { return listaProductos; }
-    public void setListaProductos(HashMap<Producto, Integer> listaProductos) { this.listaProductos = listaProductos; }
+    public List<Producto> getListaProductos() { return listaProductos; }
+    public void setListaProductos(List<Producto> listaProductos) { this.listaProductos = listaProductos; }
 }
